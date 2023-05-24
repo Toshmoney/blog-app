@@ -31,17 +31,17 @@ Your app is ready to be deployed!
 
 Unless otherwise stated all endpoints will have same base url given below:
 
-BASE_URL = 'http://localhost:1000/'
+`BASE_URL = 'http://localhost:1000/'`
 
 Sign up new user: /register/
 
 The following fields are required:
 
-username
-password
+<p>username</p>
+<p>password</p>
 Sample request
 
-axios.post(`${BASE_URL}/register/`, {
+`axios.post(`${BASE_URL}/register/`, {
     username: 'username',
     password: 'password',
 })
@@ -50,21 +50,23 @@ axios.post(`${BASE_URL}/register/`, {
 })
 .catch(error => {
     // handle error as appropriate
-})
+})`
+
 Sample success response
 
-{
+`{
     success: true,
     user: {…} // user details
-}
-Login user: /login/
+}`
+
+<h3>Login user: /login/</h3>
 Method : Post Required fields:
 
 username
 password
 Sample request
 
-axios.post(`${BASE_URL}/login/`, {
+`axios.post(`${BASE_URL}/login/`, {
     username: 'username',
     password: 'password'
 })
@@ -74,20 +76,22 @@ axios.post(`${BASE_URL}/login/`, {
 })
 .catch(error => {
     // handle error
-})
+})`
+
 Sample success response
 
-{
+`{
     success: true;
     token: ''; // to be sent along all requests require quthorization
     user: {...} // user details
-}
-GET USER DETAIL: /users/user_id/
+}`
+
+<h3> GET USER DETAIL: /users/user_id/ </h3>
 Method: GET
 
 NB: user_id is a unique identifier for the user which is gotten after a user has logged in
 
-axios.get(`${BASE_URL}/users/${user_id}/`, {
+`axios.get(`${BASE_URL}/users/${user_id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -99,15 +103,15 @@ axios.get(`${BASE_URL}/users/${user_id}/`, {
     })
     .catch(error => {
     console.log(error);
-})
+})`
 
-GET SINGLE BLOG POST: /:id/
+<h3>GET SINGLE BLOG POST: /:id/</h3>
 
 Method: GET
 
-NB: id is a unique identifier for the user which is gotten after a post has been published.
+<p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-axios.get(`${BASE_URL}/${id}/`, {
+`axios.get(`${BASE_URL}/${id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -119,13 +123,14 @@ axios.get(`${BASE_URL}/${id}/`, {
     })
     .catch(error => {
     console.log(error);
-})
-GET ALL BLOG POST: /posts/:id/
+})`
+
+<h3>GET ALL BLOG POST: /posts/:id/</h3>
 Method: GET
 
-NB: id is a unique identifier for the user which is gotten after a post has been published.
+<p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-axios.get(`${BASE_URL}/posts/${id}/`, {
+`axios.get(`${BASE_URL}/posts/${id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -137,6 +142,6 @@ axios.get(`${BASE_URL}/posts/${id}/`, {
     })
     .catch(error => {
     console.log(error);
-})
+})`
 
 
