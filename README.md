@@ -33,115 +33,115 @@ Unless otherwise stated all endpoints will have same base url given below:
 
 `BASE_URL = 'http://localhost:1000/'`
 
-<h3>Sign up new user: /register/</h3>
+Sign up new user: /register/
 
 The following fields are required:
 
 <p>username</p>
 <p>password</p>
+Sample request
 
-<p>Sample request</p>
-
-`axios.post(`${BASE_URL}/register/`, { <br />
-    username: 'username',<br />
-    password: 'password', <br />
-})<br />
-.then((response) => {<br />
-    console.log(response.data) <br />
-}) <br />
-.catch(error => { <br />
-    // handle error as appropriate <br />
-})` <br />
+`axios.post(`${BASE_URL}/register/`, {
+    username: 'username',
+    password: 'password',
+})
+.then((response) => {
+    console.log(response.data)
+})
+.catch(error => {
+    // handle error as appropriate
+})`
 
 Sample success response
 
-`{ <br />
-    success: true, <br />
-    user: {…} // user details <br />
-}` <br />
+`{
+    success: true,
+    user: {…} // user details
+}`
 
 <h3>Login user: /login/</h3>
 Method : Post Required fields:
 
-username <br />
-password <br />
-Sample request <br />
+username
+password
+Sample request
 
-`axios.post(`${BASE_URL}/login/`, { <br />
-    username: 'username', <br />
-    password: 'password' <br />
-}) <br />
-.then((response) => { <br />
-    const {data} = response <br />
-    console.log(data) <br />
-}) <br />
-.catch(error => { <br />
-    // handle error <br />
-})` <br />
+`axios.post(`${BASE_URL}/login/`, {
+    username: 'username',
+    password: 'password'
+})
+.then((response) => {
+    const {data} = response
+    console.log(data)
+})
+.catch(error => {
+    // handle error
+})`
 
-Sample success response <br />
+Sample success response
 
-`{ <br />
-    success: true; <br />
-    token: ''; // to be sent along all requests require quthorization <br />
-    user: {...} // user details <br />
-}` <br />
+`{
+    success: true;
+    token: ''; // to be sent along all requests require quthorization
+    user: {...} // user details
+}`
 
-<h3> GET USER DETAIL: /users/user_id/ </h3> <br />
-Method: GET <br />
+<h3> GET USER DETAIL: /users/user_id/ </h3>
+Method: GET
 
-NB: user_id is a unique identifier for the user which is gotten after a user has logged in <br />
+NB: user_id is a unique identifier for the user which is gotten after a user has logged in
 
-`axios.get(`${BASE_URL}/users/${user_id}/`, { <br />
-    headers: { <br />
-        'Authorization': `Token ${token}`, <br />
-        'Content-Type': 'application/json' <br />
-    } <br />
-    }) <br />
-    .then(response => { <br />
-    const {data} = response <br />
-    console.log(data) <br />
-    }) <br />
-    .catch(error => { <br />
-    console.log(error); <br />
-})` <br />
+`axios.get(`${BASE_URL}/users/${user_id}/`, {
+    headers: {
+        'Authorization': `Token ${token}`,
+        'Content-Type': 'application/json'
+    }
+    })
+    .then(response => {
+    const {data} = response
+    console.log(data)
+    })
+    .catch(error => {
+    console.log(error);
+})`
 
 <h3>GET SINGLE BLOG POST: /:id/</h3>
 
-Method: GET <br />
+Method: GET
 
 <p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-`axios.get(`${BASE_URL}/${id}/`, {<br />
-    headers: {<br />
-        'Authorization': `Token ${token}`, <br />
-        'Content-Type': 'application/json' <br />
-    } <br />
-    }) <br />
-    .then(response => { <br />
-    const {data} = response <br />
-    console.log(data) <br />
-    }) <br />
-    .catch(error => { <br />
-    console.log(error); <br />
-})` <br />
+`axios.get(`${BASE_URL}/${id}/`, {
+    headers: {
+        'Authorization': `Token ${token}`,
+        'Content-Type': 'application/json'
+    }
+    })
+    .then(response => {
+    const {data} = response
+    console.log(data)
+    })
+    .catch(error => {
+    console.log(error);
+})`
 
 <h3>GET ALL BLOG POST: /posts/:id/</h3>
 Method: GET
 
 <p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-`axios.get(`${BASE_URL}/posts/${id}/`, { <br />
-    headers: { <br />
-        'Authorization': `Token ${token}`, <br />
-        'Content-Type': 'application/json' <br />
-    } <br />
-    }) <br />
-    .then(response => { <br />
-    const {data} = response <br />
-    console.log(data) <br />
-    }) <br />
-    .catch(error => { <br />
-    console.log(error); <br />
-})` <br />
+`axios.get(`${BASE_URL}/posts/${id}/`, {
+    headers: {
+        'Authorization': `Token ${token}`,
+        'Content-Type': 'application/json'
+    }
+    })
+    .then(response => {
+    const {data} = response
+    console.log(data)
+    })
+    .catch(error => {
+    console.log(error);
+})`
+
 
