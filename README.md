@@ -41,7 +41,8 @@ The following fields are required:
 <p>password</p>
 Sample request
 
-`axios.post(`${BASE_URL}/register/`, {
+```js
+axios.post(`${BASE_URL}/register/`, {
     username: 'username',
     password: 'password',
 })
@@ -50,14 +51,17 @@ Sample request
 })
 .catch(error => {
     // handle error as appropriate
-})`
+})
+```
 
 Sample success response
 
-`{
+```js
+{
     success: true,
     user: {…} // user details
-}`
+}
+```
 
 <h3>Login user: /login/</h3>
 Method : Post Required fields:
@@ -66,7 +70,8 @@ username
 password
 Sample request
 
-`axios.post(`${BASE_URL}/login/`, {
+```js
+axios.post(`${BASE_URL}/login/`, {
     username: 'username',
     password: 'password'
 })
@@ -76,22 +81,26 @@ Sample request
 })
 .catch(error => {
     // handle error
-})`
+})
+```
 
 Sample success response
 
-`{
+```js
+{
     success: true;
     token: ''; // to be sent along all requests require quthorization
     user: {...} // user details
-}`
+}
+```
 
 <h3> GET USER DETAIL: /users/user_id/ </h3>
 Method: GET
 
 NB: user_id is a unique identifier for the user which is gotten after a user has logged in
 
-`axios.get(`${BASE_URL}/users/${user_id}/`, {
+```js
+axios.get(`${BASE_URL}/users/${user_id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -103,7 +112,8 @@ NB: user_id is a unique identifier for the user which is gotten after a user has
     })
     .catch(error => {
     console.log(error);
-})`
+})
+```
 
 <h3>GET SINGLE BLOG POST: /:id/</h3>
 
@@ -111,7 +121,8 @@ Method: GET
 
 <p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-`axios.get(`${BASE_URL}/${id}/`, {
+```js
+axios.get(`${BASE_URL}/${id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -123,14 +134,16 @@ Method: GET
     })
     .catch(error => {
     console.log(error);
-})`
+})
+```
 
 <h3>GET ALL BLOG POST: /posts/:id/</h3>
 Method: GET
 
 <p>NB: id is a unique identifier for the user which is gotten after a post has been published.</p>
 
-`axios.get(`${BASE_URL}/posts/${id}/`, {
+```js
+axios.get(`${BASE_URL}/posts/${id}/`, {
     headers: {
         'Authorization': `Token ${token}`,
         'Content-Type': 'application/json'
@@ -142,6 +155,7 @@ Method: GET
     })
     .catch(error => {
     console.log(error);
-})`
+})
+```
 
 
